@@ -1,0 +1,53 @@
+@startuml
+
+actor User
+participant "App" as App
+box EHR
+    participant  "EHR\nFHIR" as EhrFHIR
+    participant  "EHR\nAS" as EhrAS
+end box
+box Other
+    participant  "Other\nFHIR" as OtherFHIR
+    participant  "Other\nAS" as OtherAS
+end box
+participant  "Brand\nProvider" as BrandProvider
+
+=== Store state ===
+
+App -> App: create state value 
+
+=== Request Other Authorization code ==
+
+OtherAS <- App --: OPEN authorize launchId=<ehr-launch-token>
+    activate OtherAS
+    
+    OtherAS -> EhrAS: retrieve backend-token
+    OtherAS -> EhrAS: introspect <ehr-launch-token>
+    
+    alt 
+        OtherAS -> EhrAS: GET Patient
+    end
+
+    group user interaction
+        note over OtherAS: detect user is logged in
+        note over OtherAS: show scopes
+        User -\ OtherAS: approve scopes
+    end
+App <- OtherAS --: REDIRECT <other-auth-token>
+activate App
+
+=== Request Other Access token ==
+
+App -> OtherAS ++: retrieve-token
+App <-- OtherAS --: <other-token-response>
+note left
+    token-response:
+        <other-access-token>
+end note
+
+=== restore state ===
+
+App -> App: restore state
+
+
+@enduml

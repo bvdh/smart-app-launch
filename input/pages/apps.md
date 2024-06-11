@@ -1,1 +1,0 @@
-This chapter contains those specification elements that relate to SMART on FHIR apps.

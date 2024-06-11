@@ -1,40 +1,21 @@
-## SMART App Launch IG
+# SMART launch extensions
 
-Official publication: https://hl7.org/fhir/smart-app-launch/
+A set of extensions on SMART on FHIR to allow applications to connect to multiple resource servers.
 
-The SMART App Launch Framework connects third-party applications to Electronic
-Health Record data, allowing apps to launch from inside or outside the user
-interface of an EHR system.
+The intent of this project is to describe various options for achieving such a goal and inside discussion on them. In time the results of these discussion might be merged into SMART app launch.
 
-## Contributing to the Specification
+## build
 
-If you have suggestions or need to discuss potential substantive changes, please:
+The project uses the HL7 IG builder. The easiest way to build the project is to run
 
-* Join the conversation in [`#smart` on chat.fhir.org](https://chat.fhir.org/#narrow/stream/179170-smart)
-* Submit change requests or issues through the [HL7 JIRA](https://jira.hl7.org/).
+> _startDockerPublisher.sh
 
-our contributions help us improve the SMART App Launch Framework, making it more robust and versatile.
+call 
 
+> _updatePublisher.sh
 
-## Developers: Building this IG
+and then 
 
+> _genonce.sh
 
-### Launch the publisher dev environment
-
-```sh
-$ cd smart-app-launch
-
-$ docker run \
-    --rm -it \
-    -v "$(pwd):/home/publisher/ig" \
-    hl7fhir/ig-publisher-base
-```
-
-### Now, in the docker container...
-
-```sh
-$ sushi # This shouldn't be necessary but currently it is, the first time
-$ _updatePublisher.sh # If you haven't done it before
-$ _genonce.sh
-```
-
+This will build and validate the project. The results will be stored in a newly created `output` directory.
