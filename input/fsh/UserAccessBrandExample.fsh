@@ -55,7 +55,7 @@ InstanceOf: http://hl7.org/fhir/smart-app-launch/StructureDefinition/user-access
   * value  = "https://technical.philips.com/"
 * address  = "http://92.108.246.183:9410/api/fhir"
 
-Instance: UserBrandBundle
+Instance: UserBrandBundleExample
 InstanceOf: http://hl7.org/fhir/smart-app-launch/StructureDefinition/user-access-brands-bundle
 * meta.lastUpdated = 2024-06-06T13:28:17.269+02:00
 * type = #collection

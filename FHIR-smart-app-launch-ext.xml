@@ -16,7 +16,7 @@
 <artifact id="StructureDefinition/smart-launch-conformance-original" key="StructureDefinition-smart-launch-conformance-original" name="SMART launch conformance definition"/>
 <artifact id="ValueSet/SmartCapabilities" key="ValueSet-SmartCapabilities" name="Smart Capabilities"/>
 <artifact id="ValueSet/smart-token-endpoint-auth-methods" key="ValueSet-smart-token-endpoint-auth-methods" name="Smart Token Endpoint Auth Methods supported by SMART-on-FHIR"/>
-<artifact id="Bundle/UserBrandBundle" key="Bundle-UserBrandBundle" name="UserBrandBundle"/>
+<artifact id="Bundle/UserBrandBundleExample" key="Bundle-UserBrandBundleExample" name="UserBrandBundleExample"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
